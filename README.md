@@ -6,24 +6,27 @@ I develop geospatial tools and automated workflows for spatial analysis, data pr
 
 📍 Hamburg, Germany
 
-## What I work with
+## Expertise
 
 - **GIS development:** ArcGIS Pro, ArcGIS Pro SDK for .NET, ArcPy
 - **Web GIS:** ArcGIS Experience Builder and ArcGIS APIs
 - **Geospatial Python:** GDAL, GeoPandas, Shapely, Pyogrio and PyProj
 - **Data processing:** Pandas, NumPy and spatial databases
 - **Development:** Python, C#/.NET, Qt and Git
-- **Focus areas:** GIS automation, desktop GIS applications, spatial data processing and renewable energy
+- **Focus:** GIS automation, desktop GIS applications and renewable energy
 
----
+## Selected projects
 
-# Featured Project: Wind Turbine Site Planner
+<details>
+<summary><strong>🌬️ Wind Turbine Site Planner</strong> — ArcGIS Pro planning and validation automation</summary>
 
-**Wind Turbine Site Planner** is an ArcGIS Pro geoprocessing tool for preparing and validating wind-turbine planning data. Its main focus is the automated calculation of the German **Baulastkreis** according to the selected federal state, planning context and turbine geometry.
+<br>
+
+An ArcGIS Pro geoprocessing tool for preparing and validating wind-turbine planning data. Its main focus is the automated calculation of the German **Baulastkreis** according to the selected federal state, planning context and turbine geometry.
 
 ![Wind Turbine Site Planner showing an example Baulastkreis calculation](assets/wind-turbine-site-planner.svg)
 
-## Baulastkreis calculation
+### Baulastkreis calculation
 
 Baulast requirements for wind turbines are not represented by one universal calculation. The tool selects the applicable rule using:
 
@@ -31,8 +34,6 @@ Baulast requirements for wind turbines are not represented by one universal calc
 - whether a **Bebauungsplan** applies
 - the state-specific eccentricity method
 - the technical dimensions of the selected turbine
-
-The calculation uses the following variables:
 
 | Variable | Meaning |
 |---|---|
@@ -44,7 +45,7 @@ The calculation uses the following variables:
 
 Depending on the selected rule, the calculation combines the relevant turbine dimensions and eccentricity parameters using the applicable state-specific method. Parameter changes are validated immediately, and the calculated value can be written to the output features together with a spatial buffer for map-based review.
 
-## Calculated and enriched outputs
+### Calculated and enriched outputs
 
 | Output | Description |
 |---|---|
@@ -54,15 +55,17 @@ Depending on the selected rule, the calculation combines the relevant turbine di
 | Rotor geometry | Rotor diameter and rotor radius of the selected turbine model |
 | Foundation geometry | Foundation radius and elevation/depth values |
 | Eccentricity | Applicable centre or upper eccentricity according to the selected state rule |
-| Baulastkreis | Calculated state-specific Baulast radius and its spatial review buffer |
-| Turbulence distances | Additional distance zones for preliminary spatial assessment |
-| Location attributes | Federal state, parcel and other available administrative information |
+| Baulastkreis | Calculated state-specific radius and spatial review buffer |
+| Turbulence distances | Additional zones for preliminary spatial assessment |
+| Location attributes | Federal state, parcel and administrative information |
 
 The tool also provides automatic turbine-parameter lookup, validation inside the ArcGIS Pro dialog, attribute enrichment, and support for **EPSG:25832** and **EPSG:25833**.
 
 **Technology:** Python · ArcPy · ArcGIS Pro · Geoprocessing
 
-> The source code, calculation tables and project data are maintained in a private repository.
+> Source code, calculation tables and project data are maintained in a private repository.
+
+</details>
 
 ## Current interests
 
@@ -72,6 +75,6 @@ The tool also provides automatic turbine-parameter lookup, validation inside the
 - Geospatial APIs, data integration and workflow automation
 - Practical applications of AI in GIS
 
-## Connect with me
+## Connect
 
 [LinkedIn](https://www.linkedin.com/in/ahmad-fahim-omar-9bb95b272/)
