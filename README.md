@@ -69,7 +69,7 @@ The tool also provides automatic turbine-parameter lookup, validation inside the
 
 
 <details>
-<summary><strong>⚡ EnergyGIS</strong> — Independent desktop GIS platform for energy and spatial analysis</summary>
+<summary><strong>⚡ EnergyGIS</strong> — Desktop GIS platform with automated Bruttoertrag calculation</summary>
 
 <br>
 
@@ -77,8 +77,25 @@ The tool also provides automatic turbine-parameter lookup, validation inside the
 
 ![EnergyGIS desktop geospatial analysis workspace](assets/energygis-profile.webp)
 
+### Automated Bruttoertrag workflow
+
+One of the central EnergyGIS workflows automates the process from wind-resource data preparation to the final annual gross-yield result:
+
+1. Retrieves and prepares the required wind-resource inputs
+2. Reads turbine coordinates, hub height, model and rated capacity from Excel
+3. Samples mean wind speed, Weibull **A/K** parameters and air density at reference heights
+4. Adjusts the wind parameters to the exact turbine hub height
+5. Matches each turbine model to the appropriate power curve
+6. Calculates the annual **Bruttoertrag in MWh/a**
+7. Writes the results and validation status back to a structured Excel output
+
+The calculation combines spatial raster sampling, height interpolation, air-density correction, Weibull wind-speed distributions and density-dependent turbine power curves. Missing coordinates, unmatched power curves or unavailable raster values are reported transparently instead of being silently ignored.
+
+**Generated values include:** gross yield, matched power curve, mean wind speed at hub height, air density, Weibull A/K parameters and calculation status.
+
 ### Application capabilities
 
+- Automated wind-resource data preparation and Bruttoertrag calculation
 - Interactive map workspace with layer management
 - Attribute-table viewing and spatial dataset browsing
 - Modular registry for adding and organizing GIS tools
@@ -99,7 +116,7 @@ Current processing areas include:
 | Vector processing | Buffer, dissolve, geometry repair and spatial workflows |
 | Raster processing | Raster-based analysis and data preparation |
 | Wind analysis | Wind-project and turbine-related processing |
-| Gross yield | Energy-yield data preparation and calculation workflows |
+| Gross yield | Automated data preparation, raster sampling, power-curve matching and annual MWh/a calculation |
 | Data management | Layer properties, attribute tables and dataset discovery |
 
 **Technology:** Python · PySide6 · GDAL · GeoPandas · Shapely · Pyogrio · PyProj · Geofileops · Pandas
