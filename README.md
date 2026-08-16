@@ -108,6 +108,41 @@ The gross-yield workflow combines turbine coordinates, hub height, rated capacit
 
 </details>
 
+<details>
+<summary><strong>🔌 Cable Route Optimizer</strong> — Cost-aware routing between wind-energy areas and substations · <em>View details</em></summary>
+
+<br>
+
+**Cable Route Optimizer** is an ArcGIS Pro geoprocessing tool for identifying a practical cable corridor between wind-energy areas and substations. Instead of drawing a direct connection, it evaluates the surrounding terrain and infrastructure and searches for a lower-cost route.
+
+### Routing workflow
+
+| Step | What happens |
+|---|---|
+| 1 | Validate the input locations and coordinate system |
+| 2 | Define the analysis area around the wind-energy site and substation |
+| 3 | Combine land use, terrain slope, transport infrastructure, water features, and optional project barriers |
+| 4 | Convert the prepared spatial information into a weighted cost surface |
+| 5 | Select suitable boundary points using a KD-tree search |
+| 6 | Calculate an optimized route with a custom eight-direction A* algorithm |
+| 7 | Export the result as a GIS polyline for technical review |
+
+### Planning features
+
+- Configurable cost and barrier weighting
+- Terrain-slope integration
+- Optional project-specific exclusion areas
+- Efficient boundary-point matching
+- ArcGIS Pro progress reporting and temporary-data cleanup
+- Input validation for **ETRS89 / UTM zone 32N (EPSG:25832)**
+
+**Technology:** Python · ArcPy · NumPy · SciPy · Raster analysis · A* pathfinding
+
+> Source code, service endpoints, project data, and historical development versions are maintained in a private repository. The result supports preliminary route assessment and does not replace detailed engineering or permitting.
+
+</details>
+
+
 ## Current interests
 
 - Scalable GIS tools and reusable processing workflows
