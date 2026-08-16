@@ -73,6 +73,41 @@ Sanitized configuration examples include:
 
 
 <details>
+<summary><strong>🌐 ERA5 Wind Rose Analyzer</strong> — Turbine-specific directional wind analysis from ERA5 data · <em>View details</em></summary>
+
+<br>
+
+**ERA5 Wind Rose Analyzer** is an ArcGIS Pro geoprocessing tool that converts ERA5 wind-vector time series into turbine-specific wind-rose polygons. It combines meteorological time-series processing with GIS geometry creation so directional wind patterns can be reviewed directly on the project map.
+
+![ERA5 Wind Rose Analyzer showing directional frequency polygons, toolbox parameters and output attributes](assets/era5-wind-rose-analyzer.webp)
+
+### Analysis workflow
+
+| Step | What happens |
+|---|---|
+| 1 | Validate turbine points, NetCDF files, coordinate system, radius, and output location |
+| 2 | Transform each turbine position to WGS 84 for ERA5 sampling |
+| 3 | Read the nearest `u100` and `v100` wind-vector time series |
+| 4 | Calculate meteorological wind direction and wind speed |
+| 5 | Adjust wind speed from 100 m to the turbine hub height |
+| 6 | Remove extreme values and classify observations into 16 directional sectors |
+| 7 | Calculate frequency and mean wind speed for each sector |
+| 8 | Create scaled wind-rose polygons in the project coordinate system |
+
+### Output information
+
+Each sector stores the source turbine ID, direction label and angle, sample count, directional frequency, mean wind speed, scaled radius, and hub height used in the calculation. This makes the visual result traceable through the attribute table and suitable for preliminary site comparison.
+
+The tool accepts common hub-height fields automatically and uses a documented 100 m default when no valid value is available. Project coordinates remain in the original projected metre-based reference system, while WGS 84 is used only for sampling ERA5 data.
+
+**Technology:** Python · ArcPy · xarray · NumPy · SciPy · NetCDF · ERA5
+
+> Source code and operational datasets are maintained in a private repository. The results support technical screening and visualization; they do not replace a certified wind-resource or energy-yield assessment.
+
+</details>
+
+
+<details>
 <summary><strong>🌬️ Wind Turbine Site Planner</strong> — ArcGIS Pro planning and validation automation · <em>View details</em></summary>
 
 <br>
