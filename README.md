@@ -28,6 +28,8 @@ Click a project below to view its details, workflow and technologies.
 
 The toolkit is designed around a clear separation between **parameter validation** and **processing logic**. ArcGIS Pro validates user selections and dependent parameters before execution, while the processing components run the spatial analysis and write structured results to GIS datasets and Excel templates.
 
+![Wind Project Assessment Toolkit showing a completed GIS assessment, toolbox and attribute table](assets/wind-project-assessment-toolkit.webp)
+
 ### Included tools
 
 | Tool | Main task |
