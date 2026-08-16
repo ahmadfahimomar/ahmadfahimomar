@@ -67,6 +67,47 @@ The tool also provides automatic turbine-parameter lookup, validation inside the
 
 </details>
 
+
+<details>
+<summary><strong>⚡ EnergyGIS</strong> — Independent desktop GIS platform for energy and spatial analysis</summary>
+
+<br>
+
+**EnergyGIS** is a modular Python desktop application that brings mapping, data management and geoprocessing tools into one independent workspace. It is designed to make repeatable GIS workflows easier to run, extend and distribute without relying on a full proprietary desktop-GIS installation.
+
+![EnergyGIS desktop geospatial analysis workspace](assets/energygis-profile.webp)
+
+### Application capabilities
+
+- Interactive map workspace with layer management
+- Attribute-table viewing and spatial dataset browsing
+- Modular registry for adding and organizing GIS tools
+- Vector, raster, wind-energy and gross-yield tool categories
+- Reusable parameter framework with validation and progress feedback
+- Integrated Python console and tool documentation
+- Local map-service components for desktop visualization
+- Admin-free portable Windows packaging for user testing
+
+### Geoprocessing architecture
+
+EnergyGIS separates the user interface, processing services and individual GIS tools. This modular structure allows new workflows to be registered consistently and executed through a common parameter interface.
+
+Current processing areas include:
+
+| Area | Examples |
+|---|---|
+| Vector processing | Buffer, dissolve, geometry repair and spatial workflows |
+| Raster processing | Raster-based analysis and data preparation |
+| Wind analysis | Wind-project and turbine-related processing |
+| Gross yield | Energy-yield data preparation and calculation workflows |
+| Data management | Layer properties, attribute tables and dataset discovery |
+
+**Technology:** Python · PySide6 · GDAL · GeoPandas · Shapely · Pyogrio · PyProj · Geofileops · Pandas
+
+> EnergyGIS is under active development. Source code and project-specific data are maintained in a private repository.
+
+</details>
+
 ## Current interests
 
 - Scalable GIS tools and reusable processing workflows
