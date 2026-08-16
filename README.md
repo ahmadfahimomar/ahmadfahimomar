@@ -69,59 +69,40 @@ The tool also provides automatic turbine-parameter lookup, validation inside the
 
 
 <details>
-<summary><strong>⚡ EnergyGIS</strong> — Desktop GIS platform with automated Bruttoertrag calculation</summary>
+<summary><strong>⚡ EnergyGIS</strong> — Desktop GIS workflows for wind-energy analysis</summary>
 
 <br>
 
-**EnergyGIS** is a modular Python desktop application that brings mapping, data management and geoprocessing tools into one independent workspace. It is designed to make repeatable GIS workflows easier to run, extend and distribute without relying on a full proprietary desktop-GIS installation.
+**EnergyGIS** is a modular desktop GIS application I am building with Python and PySide6. The goal is simple: bring recurring geospatial and wind-energy tasks into one consistent workspace—from public source data to structured yield results.
 
 ![EnergyGIS desktop geospatial analysis workspace](assets/energygis-profile.webp)
 
-### Automated Bruttoertrag workflow
+### Wind Analysis workflow
 
-One of the central EnergyGIS workflows automates the process from wind-resource data preparation to the final annual gross-yield result:
+The Wind toolbox connects four tools into a practical end-to-end workflow:
 
-1. Retrieves and prepares the required wind-resource inputs
-2. Reads turbine coordinates, hub height, model and rated capacity from Excel
-3. Samples mean wind speed, Weibull **A/K** parameters and air density at reference heights
-4. Adjusts the wind parameters to the exact turbine hub height
-5. Matches each turbine model to the appropriate power curve
-6. Calculates the annual **Bruttoertrag in MWh/a**
-7. Writes the results and validation status back to a structured Excel output
+| Step | Tool | What it does |
+|---|---|---|
+| 1 | **MaStR Wind Turbines** | Downloads public wind-turbine records and filters them by federal state, operating status, and onshore/offshore location |
+| 2 | **Create WTG Names** | Cleans turbine attributes and creates consistent model names for reliable power-curve matching |
+| 3 | **Calculate Gross Yield** | Samples wind-atlas rasters, adjusts values to hub height, matches the turbine power curve, and calculates annual gross yield |
+| 4 | **Calculate Net Yield** | Applies configurable project losses and calculates net yield and load factor for preliminary assessment |
 
-The calculation combines spatial raster sampling, height interpolation, air-density correction, Weibull wind-speed distributions and density-dependent turbine power curves. Missing coordinates, unmatched power curves or unavailable raster values are reported transparently instead of being silently ignored.
+The gross-yield workflow combines turbine coordinates, hub height, rated capacity, Weibull parameters, mean wind speed, air density, and density-dependent power curves. Results are written directly to the working Excel file together with clear status information for missing inputs, unmatched power curves, or unavailable raster values.
 
-**Generated values include:** gross yield, matched power curve, mean wind speed at hub height, air density, Weibull A/K parameters and calculation status.
+### Designed for repeatable work
 
-### Application capabilities
+- Shared parameter interface for all registered tools
+- Dynamic worksheet and field selection
+- Progress reporting and cancellation
+- Separate worker process for the resource-intensive gross-yield calculation
+- Map, layer, attribute-table, and dataset-management functions
+- Portable Windows build for admin-free user testing
+- Modular structure for adding further vector, raster, and energy tools
 
-- Automated wind-resource data preparation and Bruttoertrag calculation
-- Interactive map workspace with layer management
-- Attribute-table viewing and spatial dataset browsing
-- Modular registry for adding and organizing GIS tools
-- Vector, raster, wind-energy and gross-yield tool categories
-- Reusable parameter framework with validation and progress feedback
-- Integrated Python console and tool documentation
-- Local map-service components for desktop visualization
-- Admin-free portable Windows packaging for user testing
+**Technology:** Python · PySide6 · GDAL · GeoPandas · Shapely · Pyogrio · PyProj · Geofileops · Pandas · OpenPyXL
 
-### Geoprocessing architecture
-
-EnergyGIS separates the user interface, processing services and individual GIS tools. This modular structure allows new workflows to be registered consistently and executed through a common parameter interface.
-
-Current processing areas include:
-
-| Area | Examples |
-|---|---|
-| Vector processing | Buffer, dissolve, geometry repair and spatial workflows |
-| Raster processing | Raster-based analysis and data preparation |
-| Wind analysis | Wind-project and turbine-related processing |
-| Gross yield | Automated data preparation, raster sampling, power-curve matching and annual MWh/a calculation |
-| Data management | Layer properties, attribute tables and dataset discovery |
-
-**Technology:** Python · PySide6 · GDAL · GeoPandas · Shapely · Pyogrio · PyProj · Geofileops · Pandas
-
-> EnergyGIS is under active development. Source code and project-specific data are maintained in a private repository.
+> EnergyGIS is under active development. The source code and project-specific data are maintained in a private repository. Yield results are intended for technical screening and do not replace a certified energy-yield assessment.
 
 </details>
 
