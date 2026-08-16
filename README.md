@@ -17,8 +17,10 @@ I develop geospatial tools and automated workflows for spatial analysis, data pr
 
 ## Selected projects
 
+Click a project below to view its details, workflow and technologies.
+
 <details>
-<summary><strong>🌬️ Wind Turbine Site Planner</strong> — ArcGIS Pro planning and validation automation</summary>
+<summary><strong>🌬️ Wind Turbine Site Planner</strong> — ArcGIS Pro planning and validation automation · <em>View details</em></summary>
 
 <br>
 
@@ -69,7 +71,7 @@ The tool also provides automatic turbine-parameter lookup, validation inside the
 
 
 <details>
-<summary><strong>⚡ EnergyGIS</strong> — Desktop GIS workflows for wind-energy analysis</summary>
+<summary><strong>⚡ EnergyGIS</strong> — Desktop GIS workflows for wind-energy analysis · <em>View details</em></summary>
 
 <br>
 
