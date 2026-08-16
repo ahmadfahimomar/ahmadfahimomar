@@ -115,6 +115,8 @@ The gross-yield workflow combines turbine coordinates, hub height, rated capacit
 
 **Cable Route Optimizer** is an ArcGIS Pro geoprocessing tool for identifying a practical cable corridor between wind-energy areas and substations. Instead of drawing a direct connection, it evaluates the surrounding terrain and infrastructure and searches for a lower-cost route.
 
+![Cable Route Optimizer showing a completed route, attribute table and geoprocessing toolbox](assets/cable-route-optimizer.webp)
+
 ### Routing workflow
 
 | Step | What happens |
