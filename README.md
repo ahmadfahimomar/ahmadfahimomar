@@ -20,6 +20,57 @@ I develop geospatial tools and automated workflows for spatial analysis, data pr
 Click a project below to view its details, workflow and technologies.
 
 <details>
+<summary><strong>🧭 Wind Project Assessment Toolkit</strong> — End-to-end ArcGIS Pro screening and planning workflow · <em>View details</em></summary>
+
+<br>
+
+**Wind Project Assessment Toolkit** is a collection of ArcGIS Pro geoprocessing tools for preliminary wind-project assessment. It brings recurring GIS operations—layout preparation, spatial screening, yield checks, access analysis, and reporting—into one consistent workflow.
+
+The toolkit is designed around a clear separation between **parameter validation** and **processing logic**. ArcGIS Pro validates user selections and dependent parameters before execution, while the processing components run the spatial analysis and write structured results to GIS datasets and Excel templates.
+
+### Included tools
+
+| Tool | Main task |
+|---|---|
+| **Turbine Planning** | Prepares turbine attributes, consistent names, planning parameters, technical dimensions, and review buffers |
+| **Operator Overview** | Identifies relevant nearby operating assets and transfers selected results to the Quick Check report |
+| **Gross Yield Screening** | Reads configured yield rasters and writes preliminary gross-yield values to Excel |
+| **Maximum Layout** | Generates a preliminary maximum turbine layout using rotor-dependent spacing |
+| **Spatial Assessment** | Checks administrative, civil, military, environmental, distance, and wind-speed criteria |
+| **WTG Import / Export** | Exchanges turbine data through TXT, CSV, JSON, and GeoJSON formats |
+| **Access Route** | Calculates a preliminary connection between turbine locations and the surrounding road network |
+
+### Assessment and reporting workflow
+
+| Stage | Result |
+|---|---|
+| **Input validation** | Checks required layers, fields, coordinate systems, turbine parameters, and output locations before processing |
+| **Turbine configuration** | Uses a standardized catalogue containing manufacturer, model, rated power, rotor geometry, hub height, eccentricity, and tower-base dimensions |
+| **Rule-based screening** | Applies configurable search radii, nearest-feature rules, and assessment criteria from external control tables |
+| **Spatial processing** | Produces planning geometries, buffers, layouts, proximity results, and preliminary access connections |
+| **Excel reporting** | Writes selected results into structured Quick Check and gross/net yield worksheets |
+| **Quality control** | Keeps missing technical values visible, reports incomplete inputs, and separates reusable configuration from project-specific data |
+
+### Clean and reusable project structure
+
+The maintained version contains only the active processing and validation components. Cached files, IDE metadata, historical copies, personal paths, credentials, private service addresses, and production project data are excluded.
+
+Sanitized configuration examples include:
+
+- a **Quick Check** reporting workbook
+- two reusable **QC control tables**
+- a turbine catalogue with **99 configurations from 7 manufacturers**
+- environment-variable documentation through `.env.example`
+- repository rules through a project-specific `.gitignore`
+
+**Technology:** Python · ArcPy · ArcGIS Pro · Spatial analysis · Excel automation · JSON/GeoJSON
+
+> The source code and operational configuration are maintained in a private repository. The toolkit supports preliminary technical assessment and does not replace detailed engineering, permitting, environmental review, or a certified energy-yield assessment.
+
+</details>
+
+
+<details>
 <summary><strong>🌬️ Wind Turbine Site Planner</strong> — ArcGIS Pro planning and validation automation · <em>View details</em></summary>
 
 <br>
