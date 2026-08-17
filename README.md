@@ -255,11 +255,11 @@ The gross-yield workflow combines turbine coordinates, hub height, rated capacit
 
 ### Workflow focus
 
-- interactive turbine placement and planning geometry;
-- map-based angle measurement;
-- client-side proximity analysis and temporary buffer graphics;
-- directional wind visualization for selected turbines;
-- clean separation between reusable widget source code and private service configuration.
+- interactive turbine placement and planning geometry
+- map-based angle measurement
+- client-side proximity analysis and temporary buffer graphics
+- directional wind visualization for selected turbines
+- clean separation between reusable widget source code and private service configuration
 
 **Technology:** TypeScript · React · ArcGIS Experience Builder · ArcGIS Maps SDK for JavaScript · Geometry Engine · NASA POWER API
 
