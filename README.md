@@ -242,7 +242,7 @@ The gross-yield workflow combines turbine coordinates, hub height, rated capacit
 
 **ArcGIS Experience Builder Widget Collection** is a set of custom Experience Builder Developer Edition widgets for interactive GIS workflows. The collection keeps related web GIS tools together instead of presenting every widget as a separate portfolio project.
 
-![Wind Turbine Planning interface](assets/experience-builder-wind-turbine-planning.jpg)
+![ArcGIS Experience Builder Widget Collection collage showing four custom widget interfaces](assets/experience-builder-widget-collection.png)
 
 ### Included widgets
 
