@@ -236,107 +236,34 @@ The gross-yield workflow combines turbine coordinates, hub height, rated capacit
 <!-- EXPERIENCE_BUILDER_WIDGETS_START -->
 
 <details>
-<summary><strong>🗺️ Wind Turbine Planning Widget</strong> — Interactive turbine planning in ArcGIS Experience Builder · <em>View details</em></summary>
+<summary><strong>🗺️ ArcGIS Experience Builder Widget Collection</strong> — Custom widgets for wind planning, measurement, buffers and wind roses · <em>View details</em></summary>
 
 <br>
 
-The **Wind Turbine Planning Widget** brings turbine placement, technical configuration and planning geometry into one interactive web-map workflow.
+**ArcGIS Experience Builder Widget Collection** is a set of custom Experience Builder Developer Edition widgets for interactive GIS workflows. The collection keeps related web GIS tools together instead of presenting every widget as a separate portfolio project.
 
 ![Wind Turbine Planning interface](assets/experience-builder-wind-turbine-planning.jpg)
 
-### Planning workflow
+### Included widgets
 
-- Place turbine locations manually or from coordinates
-- Select manufacturer, turbine model and hub height
-- Derive rotor, tower and planning parameters from configured lookup services
-- Calculate state- and context-dependent planning radii
-- Create rotor, turbulence and crane-area graphics
-- Edit, copy, move, group, import and export planned turbines
-- Review planned assets in both 2D and 3D
-
-**Technology:** TypeScript · React · ArcGIS Experience Builder · ArcGIS Maps SDK for JavaScript
-
-> The image contains fictional sample values. Source code, calculation tables and private service configuration are maintained in a private repository.
-
-</details>
-
-<details>
-<summary><strong>📐 Settlement Angle Measurement</strong> — Interactive interior and exterior angle calculation · <em>View details</em></summary>
-
-<br>
-
-**Settlement Angle Measurement** calculates an interior and exterior angle from three points placed directly on the map.
-
-![Settlement Angle Measurement interface](assets/experience-builder-settlement-angle.jpg)
-
-### How it works
-
-The first and third points define two rays meeting at the second point. The widget draws the measurement geometry, calculates the smaller interior angle and derives the corresponding exterior angle. Points can be repositioned and the result updates immediately.
-
-- Three-point map interaction
-- Interior and exterior angle calculation
-- Move, hover and selection feedback
-- Clear separation between temporary graphics and operational layers
-
-**Technology:** TypeScript · React · ArcGIS Experience Builder · Interactive map graphics
-
-> The illustrated geography and measurement values are synthetic.
-
-</details>
-
-<details>
-<summary><strong>⭕ Dissolved Buffer Widget</strong> — Client-side proximity analysis for visible map layers · <em>View details</em></summary>
-
-<br>
-
-The **Dissolved Buffer Widget** detects visible point, line and polygon layers in the current map extent and creates styled buffer results without modifying the source data.
-
-![Dissolved Buffer interface](assets/experience-builder-dissolved-buffer.jpg)
-
-### Analysis features
-
-| Capability | Result |
+| Widget | Purpose |
 |---|---|
-| Layer discovery | Lists visible feature layers containing features in the active extent |
-| Distance control | Applies an independent distance in metres to each layer |
-| Dissolve | Combines overlapping results from the same source layer |
-| Polygon handling | Creates an outer ring instead of covering the source polygon |
-| Styling | Controls fill colour, outline colour and opacity per layer |
-| Cleanup | Removes one layer's result or clears all temporary graphics |
+| **Wind Turbine Planning Widget** | Places, edits, imports, exports and visualizes planned turbine locations in 2D and 3D |
+| **Settlement Angle Measurement** | Calculates interior and exterior angles from three interactively placed map points |
+| **Dissolved Buffer Widget** | Creates styled dissolved buffers for visible point, line and polygon layers without modifying source data |
+| **Wind Rose Analysis Widget** | Generates 16-sector wind roses for selected turbine locations using hourly wind speed and direction data |
 
-All calculations run in the browser and results are written to a temporary graphics layer.
+### Workflow focus
 
-**Technology:** TypeScript · React · ArcGIS Experience Builder · Geometry Engine
+- interactive turbine placement and planning geometry;
+- map-based angle measurement;
+- client-side proximity analysis and temporary buffer graphics;
+- directional wind visualization for selected turbines;
+- clean separation between reusable widget source code and private service configuration.
 
-> The map, layer names and geometries shown in the image are illustrative.
+**Technology:** TypeScript · React · ArcGIS Experience Builder · ArcGIS Maps SDK for JavaScript · Geometry Engine · NASA POWER API
 
-</details>
-
-<details>
-<summary><strong>🧭 Wind Rose Analysis Widget</strong> — Directional wind visualization for selected turbines · <em>View details</em></summary>
-
-<br>
-
-The **Wind Rose Analysis Widget** generates map-based 16-sector wind roses for selected turbine locations using hourly wind speed and direction data from the public NASA POWER service.
-
-![Wind Rose Analysis interface](assets/experience-builder-wind-rose-analysis.jpg)
-
-### Analysis workflow
-
-1. Select turbine point features with a rectangle or polygon.
-2. Read turbine identifiers and hub heights from their attributes.
-3. Transform the locations to WGS 84 for the data request.
-4. Retrieve hourly wind speed and direction values.
-5. Group observations into 16 sectors of 22.5 degrees.
-6. Calculate frequency and mean wind speed for every sector.
-7. Scale the sectors relative to the dominant direction and draw the polygons on the map.
-8. Store, show, hide, import or export generated wind-rose records.
-
-The current implementation uses a documented 2022 analysis period. External model parameters must be reviewed before the output is used beyond visualization or preliminary screening.
-
-**Technology:** TypeScript · React · ArcGIS Experience Builder · NASA POWER API · Browser storage
-
-> The screenshot uses fictional turbine locations. The widget supports preliminary visualization and does not replace a certified wind-resource or energy-yield assessment.
+> Screenshots use fictional or sanitized values. The widgets support planning review and visualization; they do not replace certified engineering, permitting, environmental assessment or validated wind-resource studies.
 
 </details>
 
